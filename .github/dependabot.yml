@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # ここを追加！Ruby本体のマイナー/パッチ更新も追跡する
+    ignore:
+      - dependency-name: "ruby"
+        update-types: ["version-update:semver-major"] # メジャーバージョンアップ（例: 3から4）は手動で行い、3.2 -> 3.3 などのアップデートは自動化する設定
